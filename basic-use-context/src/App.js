@@ -1,38 +1,41 @@
 import React, { createContext, useState } from "react";
 import MainPage from "./Components/HomePage/MainPage/MainPage";
 import Login from "./Components/logins/Login";
+import { UserDetailsContext } from "./Store/UserDetails-context";
+
+const userLoginDetails = {
+  userdetails: {
+    userId: "",
+    userPassword: "",
+    loginStatus: false,
+  },
+};
+
+export const UserContext = createContext(userLoginDetails.userdetails);
 
 function App() {
-  const UserContext = createContext({
-    userId: "",
-    userPassword: "",
-    loginStatus: false,
-  });
-  const [userDetails, setUserDetails] = useState({
-    userId: "",
-    userPassword: "",
-    loginStatus: false,
-  });
+  const [userInfo, setUserInfo] = useState(userLoginDetails);
 
   const LoginFormSubmitHandler = (logindetails) => {
     const loginDetails = {
-      userId: logindetails.userId,
-      userPassword: logindetails.userPassword,
-      loginStatus: logindetails.loginStatus,
+      userdetails: {
+        userId: logindetails.userId,
+        userPassword: logindetails.userPassword,
+        loginStatus: logindetails.loginStatus,
+      },
     };
-
-    setUserDetails(loginDetails);
+    setUserInfo(loginDetails);
   };
 
   return (
     <div className="App">
-      <UserContext.Provider value={userDetails}>
-        {!userDetails.loginStatus ? (
+      <UserDetailsContext.Provider value={userInfo.userdetails}>
+        {!userInfo.userdetails.loginStatus ? (
           <Login onLoginFormSubmit={LoginFormSubmitHandler} />
         ) : (
           <MainPage />
         )}
-      </UserContext.Provider>
+      </UserDetailsContext.Provider>
     </div>
   );
 }

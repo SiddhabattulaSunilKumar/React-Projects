@@ -1,6 +1,6 @@
 import TopNavigation from "./TopNavigation";
 
-const Navigation = () =>{
+const Navigation = (props) =>{
 
 return(
     <TopNavigation/>

@@ -1,9 +1,8 @@
 import {useContext} from 'react';
-import UserContext from "../../../App"
+import {UserDetailsContext} from '../../../Store/UserDetails-context';
 
-const TopNavigation = () =>{
-    const user = useContext(UserContext);
-    console.log(user)
+const TopNavigation = (props) =>{
+    const user = useContext(UserDetailsContext);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,8 +42,8 @@ const TopNavigation = () =>{
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/#">
-              <div class="badge bg-primary text-wrap" style={{width: "auto"}}>
-                <span>Welcome </span> <span>Siddhabattula.sunil@gmail.com</span>
+              <div className="badge bg-primary text-wrap" style={{width: "auto"}}>
+                <span>Welcome </span> <span>{user.userId}</span>
                 </div>
               </a>
             </li>
@@ -66,7 +65,7 @@ const TopNavigation = () =>{
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/#">
-              <span class="badge badge-pill bg-danger">2</span>
+              <span className="badge badge-pill bg-danger">2</span>
           
               </a>
             </li>

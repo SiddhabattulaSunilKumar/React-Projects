@@ -5,22 +5,21 @@ const Login = (props) => {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
 
-  
-  const EmailChangerHandler = (e) =>{
+  const EmailChangerHandler = (e) => {
     setInputEmail(e.target.value);
-  }
+  };
 
-  const PasswordChangerHandler = (e) =>{
+  const PasswordChangerHandler = (e) => {
     setInputPassword(e.target.value);
-  }
+  };
 
   const LoginSubmitHandler = (e) => {
     e.preventDefault();
     const LoginUserDetails = {
-        userId : inputEmail,
-        userPassword : inputPassword,
-        loginStatus : true,
-    }
+        userId: inputEmail,
+        userPassword: inputPassword,
+        loginStatus: true,
+    };
     props.onLoginFormSubmit(LoginUserDetails);
   };
   return (

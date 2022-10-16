@@ -1,6 +1,6 @@
 import Navigation from "../Navigations/Navigation";
 
-const MainPage = () => {
+const MainPage = (props) => {
   return (
     <Navigation/>
   );
