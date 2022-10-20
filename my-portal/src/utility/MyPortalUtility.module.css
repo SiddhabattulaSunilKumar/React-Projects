@@ -1,0 +1,10 @@
+#parent_div{
+    margin-right:10px;
+    margin-top:15px;
+    color: aliceblue;
+    float:left;
+}
+.child_div{
+    float:left;
+    margin-right:5px;
+}

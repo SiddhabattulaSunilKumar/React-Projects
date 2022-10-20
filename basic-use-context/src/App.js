@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { useState } from "react";
 import MainPage from "./Components/HomePage/MainPage/MainPage";
 import Login from "./Components/logins/Login";
 import { UserDetailsContext } from "./Store/UserDetails-context";
@@ -10,8 +10,6 @@ const userLoginDetails = {
     loginStatus: false,
   },
 };
-
-export const UserContext = createContext(userLoginDetails.userdetails);
 
 function App() {
   const [userInfo, setUserInfo] = useState(userLoginDetails);
