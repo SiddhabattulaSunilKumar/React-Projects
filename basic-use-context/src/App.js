@@ -8,7 +8,7 @@ const userLoginDetails = {
     userId: "",
     userPassword: "",
     loginStatus: false,
-  },
+  }
 };
 
 function App() {
