@@ -2,6 +2,7 @@ import React from "react";
 import "./UserForm.module.css";
 import { Formik, ErrorMessage, Form, Field } from "formik";
 import * as Yup from "yup";
+import ErrorText from "./Utils/ErrorText";
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -29,17 +30,17 @@ const UseFormNew1 = () => {
         <div>
           <label>Name</label>
           <Field name="name" type="text" />
-          <ErrorMessage name="name" />
+          <ErrorMessage name="name" component={ErrorText} />
         </div>
         <div>
           <label>Email</label>
           <Field name="email" type="email" />
-          <ErrorMessage name="email" />
+          <ErrorMessage name="email" component={ErrorText} />
         </div>
         <div>
           <label>Phone</label>
           <Field name="phone" type="text" />
-          <ErrorMessage name="phone" />
+          <ErrorMessage name="phone" component={ErrorText} />
         </div>
         <div>
           <button type="submit">submit</button>
