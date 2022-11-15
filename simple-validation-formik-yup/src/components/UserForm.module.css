@@ -1,0 +1,47 @@
+button:hover {
+    background-color: orange;
+    box-shadow: 3px 3px 5px grey;
+  }
+
+button:focus {
+    outline: 2px solid gray;
+    font-weight: bold;
+    color: white;
+  }
+
+  input {
+    padding: 3px;
+    box-shadow: 3px 3px 5px grey;
+    font-size: 14px;
+    font-weight: 600;
+    width: 300px;
+  }
+
+  label {
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+  }
+  label:after { content: ": " }
+
+  label {
+    color: #B4886B;
+    font-weight: bold;
+    width: 130px;
+    float: left;
+  
+  }
+  label:after { content: ": " }
+
+  body {
+    text-align: center;
+}
+form {
+    text-align: center;
+    display: inline-block;
+    padding-top: 5%;
+}
+
+form>div{
+    margin-bottom: 20px;
+}
